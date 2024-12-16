@@ -1,6 +1,3 @@
-"""
-Simple machine learning model for pump maintenance prediction
-"""
 import math
 from typing import List, Tuple
 
@@ -14,7 +11,7 @@ class SimplePredictor:
         return 1 / (1 + math.exp(-x))
     
     def train(self, features: List[List[float]], labels: List[int], 
-              learning_rate: float = 0.1, epochs: int = 100) -> None:
+            learning_rate: float = 0.1, epochs: int = 100) -> None:
         """Train the model using simple logistic regression"""
         # Initialize weights
         num_features = len(features[0])

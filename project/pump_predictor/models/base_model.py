@@ -1,6 +1,3 @@
-"""
-Base model class for pump maintenance prediction
-"""
 from abc import ABC, abstractmethod
 import numpy as np
 from typing import Dict, Any

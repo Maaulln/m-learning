@@ -1,6 +1,3 @@
-"""
-Data handling module for pump maintenance prediction
-"""
 import csv
 from typing import List, Dict, Tuple
 import json

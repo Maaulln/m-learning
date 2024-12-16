@@ -1,6 +1,3 @@
-"""
-XGBoost implementation for pump maintenance prediction
-"""
 import xgboost as xgb
 import numpy as np
 from typing import Dict, Any

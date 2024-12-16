@@ -1,6 +1,3 @@
-"""
-Main execution module for pump maintenance prediction
-"""
 import pandas as pd
 from pathlib import Path
 
@@ -26,6 +23,10 @@ def main():
     data = preprocessor.load_data(DATA_DIR / "pump_data.csv")
     X_train, X_test, y_train, y_test = preprocessor.prepare_data(data)
     
+    # Define descriptive feature names based on actual CSV columns
+    feature_names = ['Pressure', 'Temperature', 'Speed', 'Vibration', 
+                     'Oil Level', 'Runtime Hours']
+    
     # Train and evaluate Random Forest model
     rf_model = RandomForestModel(MODEL_CONFIG['random_forest'])
     rf_model.train(X_train, y_train)
@@ -45,13 +46,16 @@ def main():
         logger.info(f"{metric}: {value:.4f}")
     
     # Visualize results
+    data_name = "Pump Data for Machine Learning"
     plot_feature_importance(
         rf_model.feature_importance(),
-        "Random Forest Feature Importance"
+        f"Random Forest Feature Importance - {data_name}",
+        feature_names=feature_names
     )
     plot_feature_importance(
         xgb_model.feature_importance(),
-        "XGBoost Feature Importance"
+        f"XGBoost Feature Importance - {data_name}",
+        feature_names=feature_names
     )
     
     # Save best model

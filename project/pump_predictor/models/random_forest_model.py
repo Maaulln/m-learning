@@ -1,6 +1,3 @@
-"""
-Random Forest implementation for pump maintenance prediction
-"""
 from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 from typing import Dict, Any

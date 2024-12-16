@@ -1,6 +1,3 @@
-"""
-Configuration settings for the pump predictor
-"""
 from pathlib import Path
 
 # Paths

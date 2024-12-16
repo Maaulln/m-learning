@@ -1,6 +1,3 @@
-"""
-Data preprocessing and feature engineering
-"""
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
